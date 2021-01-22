@@ -6,7 +6,7 @@ import BankListDumb from '../components/BankList';
 const BankList = () => {
 
     const dispatch = useDispatch();
-    const { params,  banks } = useSelector((state : any) => state.banks);
+    const { params, banks, option } = useSelector((state : any) => state.banks);
     
     useEffect(() => {
         if(params){
@@ -18,10 +18,9 @@ const BankList = () => {
             }else{
                 console.log("called!");
                 dispatch(fetchBanksOnQuery(url));
-                localStorage.setItem(url,JSON.stringify(banks));
             }
         }else{
-            const url = "branches?limit=50";
+            const url = `branches/autocomplete?q=${option}&limit=50`;
             const res = localStorage.getItem(url);
             
             if(res && res.length>0){
@@ -29,10 +28,9 @@ const BankList = () => {
             }else{
                 console.log("called!");
                 dispatch(fetchBanksOnQuery(url));
-                localStorage.setItem(url,JSON.stringify(banks));
             }
         }
-    },[params,dispatch]);
+    },[params,dispatch, option]);
 
     console.log(params);
 

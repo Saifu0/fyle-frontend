@@ -1,12 +1,16 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { setDropdownOption } from '../store';
 import { Select } from 'antd';
 
 const { Option } = Select;
 
 const Dropdown = () => {
 
-    const handleChange = () => {
+    const dispatch = useDispatch();
 
+    const handleChange = (value : string) => {
+        dispatch(setDropdownOption(value));
     }
 
     return (

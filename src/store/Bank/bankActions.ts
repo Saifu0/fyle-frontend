@@ -63,6 +63,7 @@ export const fetchBanksOnQuery = ( url : string ) => {
         axios.get(url)
             .then(res => {
                 dispatch(fetchBankSuccess(res.data.results));
+                localStorage.setItem(url,JSON.stringify(res.data.results));
             })
             .catch(err => {
                 dispatch(fetchBankFailure(err.message))

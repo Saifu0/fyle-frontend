@@ -9,17 +9,22 @@ const BankList = ( props : any ) => {
     const { isLoading } = useSelector((state : any) => state.banks);
 
     return (
-        <Row>
-            {isLoading ? 
-            <Spin 
-                size="large"
-                style={{
-                    marginLeft : 800,
-                    marginTop : 350
-                }}
-            /> : 
-            props.data && props.data.map((bank : TBankDetail, index : number) => <CustomCards key={index} bank={bank}/>)}
-        </Row>
+        <>
+            <Row>
+                {isLoading ? 
+                <Spin 
+                    size="large"
+                    style={{
+                        marginLeft : 800,
+                        marginTop : 350
+                    }}
+                /> : 
+                props.data && 
+                props.data.map((bank : TBankDetail, index : number) => <CustomCards key={index} bank={bank}/>)}
+
+                
+            </Row>
+        </>
     )
 }
 

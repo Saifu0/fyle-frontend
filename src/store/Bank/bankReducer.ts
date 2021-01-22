@@ -10,7 +10,7 @@ import {
 import { TState } from './@types';
 
 const initialState : TState = {
-    option : 'NONE',
+    option : 'Bangalore',
     params : '',
     banks : [],
     favorites : [],

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Dropdown from './Dropdown';
 import Searchbar from './Searchbar';
-import { Row, Col} from 'antd';
+import { Row, Col } from 'antd';
 import BankList from '../containers/BankList';
 
 const Dashboard = () => {
