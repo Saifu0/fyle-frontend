@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Dropdown from './Dropdown';
 import Searchbar from './Searchbar';
 import { Row, Col} from 'antd';
 import BankList from '../containers/BankList';
 
 const Dashboard = () => {
+
+    
     
     return (
         <div>
@@ -14,7 +17,9 @@ const Dashboard = () => {
                 </Col>
 
                 <Col style={{ marginTop : 30}}>
-                    Favorites
+                    <Link to="favorites">
+                        Favorites
+                    </Link>
                 </Col>
             </Row>
 

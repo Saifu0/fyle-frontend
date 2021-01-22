@@ -14,4 +14,5 @@ export interface TState {
     banks : TBankDetail[];
     isLoading : boolean;
     error : string;
+    favorites : TBankDetail[];
 }

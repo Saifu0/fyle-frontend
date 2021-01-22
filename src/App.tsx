@@ -1,9 +1,11 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 import Dashboard from './components/Dashboard';
 import store from './store/store';
 import { Provider } from 'react-redux';
 import "./App.css";
+import Favorites from "./components/Favorites";
 
 const App = () => {
 
@@ -15,8 +17,13 @@ const App = () => {
 
   return (
     <Provider store={store}>
-       <div className="App">
-        <Dashboard/>
+      <div className="App">
+        <Router>
+          <Switch>
+              <Route path="/" exact component={Dashboard}/>
+              <Route path="/favorites" component={Favorites}/>
+          </Switch>
+        </Router>
       </div>
     </Provider>
   )

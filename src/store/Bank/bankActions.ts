@@ -4,7 +4,9 @@ import {
     SET_PARAMS, 
     FETCH_BANK_FAILURE, 
     FETCH_BANK_REQUEST, 
-    FETCH_BANK_SUCCESS 
+    FETCH_BANK_SUCCESS,
+    ADD_FAVORITE,
+    SET_FAVORITE
 } from './bankTypes';
 
 
@@ -18,6 +20,20 @@ export const setDropdownOption = ( option : string ) => {
     return {
         type : SET_DROPDOWN_OPTION,
         payload : option
+    }
+}
+
+export const addToFavorite = ( item : any ) => {
+    return {
+        type : ADD_FAVORITE,
+        payload : item
+    }
+}
+
+export const setFavorites = ( favorites : any ) => {
+    return  {
+        type : SET_FAVORITE,
+        payload : favorites
     }
 }
 
